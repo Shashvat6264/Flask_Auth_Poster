@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Hi, {{ user.name }}</h1><br>
+{% for post in posts %}
+<div class="post">
+<div class="description">{{ post.description }}</div><br>
+{{ post.complete_post }}<br>
+<a href="{{ url_for('main_blueprint.profile_view',username=post.publisher) }}">{{ post.publisher }}</a><br>
+Likes: <span class="likes">{{ post.likes }}</span><br>
+<button onclick="like('{{ post.id }}')">Like</button>
+</div><br>
+{% endfor %}
+<a href="{{ url_for('auth_blueprint.logout') }}">Logout</a><br>
+<a href="{{ url_for('post_blueprint.add_post') }}">Add a Post</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='script/liked.js') }}"></script>
+{% endblock %}

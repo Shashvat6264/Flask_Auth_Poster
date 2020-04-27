@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Registration Form</h1>
+    <form action='/registered' method="POST" novalidate>
+        {{ form.hidden_tag() }}
+        {% for att in form %}
+        <p>
+            {{ att.label }}<br>
+            {{ att }}
+        </p>
+        {% endfor %}
+    </form>
+{% endblock %}

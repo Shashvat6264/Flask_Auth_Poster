@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{{ url_for('auth_blueprint.signup') }}">Signup</a><br>
+<a href="{{ url_for('auth_blueprint.login') }}">Login</a>
+{% endblock %}

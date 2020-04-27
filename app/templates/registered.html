@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>
+    You have been registered as well as logged in
+</p><br>
+<a href="{{ url_for('main_blueprint.index') }}">Main Page</a><br>
+<a href="{{  url_for('auth_blueprint.login')}}">Login Page</a><br>
+<a href="{{ url_for('main_blueprint.profile') }}">Profile</a>
+{% endblock %}
